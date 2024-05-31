@@ -1,0 +1,131 @@
+palette = "catppuccin_macchiato"
+
+format = """
+[░▒▓](surface2)\
+$sudo\
+[  ](bg:surface2 fg:peach)\
+[](fg:surface2 bg:surface1)\
+$directory\
+[](fg:surface1 bg:base)\
+$git_branch\
+$git_status\
+$git_commit\
+$git_metrics\
+[](fg:base bg:mantle)\
+$nodejs\
+$rust\
+$golang\
+$php\
+$zig\
+[](fg:mantle bg:crust)\
+$time\
+[](fg:crust)\
+\n $character"""
+
+[character]
+success_symbol = '[󱞩](bold green) '
+error_symbol = '[](bold red) '
+
+[sudo]
+style = ''
+symbol = ' sudo  '
+disabled = false
+format = '[[ $symbol ($version) ](bold fg:#ff5050 bg:surface2)]($style)'
+
+[directory]
+read_only = ' [READONLY ]'
+read_only_style = "bold #ff5050 bg:surface1"
+style = "fg:peach bg:surface1"
+format = "[$read_only]($read_only_style)[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = " 󰈙 "
+"Downloads" = "   "
+"Music" = "  "
+"Pictures" = "  "
+
+[git_branch]
+symbol = ""
+format = '[[ $symbol $branch ](fg:text bg:base)]($style)'
+
+[git_status]
+format = '[[($all_status$ahead_behind )](fg:yellow bg:base)]($style)'
+conflicted = '󰡍'
+ahead = '[ ](blue bg:base)'
+behind = '[ ](red bg:base)'
+diverged = '[!󰃻!](yellow bg:base)'
+up_to_date = '[](green bg:base)'
+untracked = '? '
+stashed = '󰌾 '
+modified = ' '
+staged = '[++\($count\) ](green bg:base)'
+renamed = '󰕛 '
+deleted = '[!󰗨!](red bg:base)'
+
+[git_commit]
+commit_hash_length = 7
+only_detached = false
+format = '[[\($hash$tag\) ](fg:rosewater bg:base)]($style)'
+
+[git_metrics]
+disabled = false
+added_style = 'bold blue bg:base'
+deleted_style = 'bold red bg:base'
+style = "bg:base"
+only_nonzero_diffs = false
+format = '[[(\[[+$added]($added_style) |) ([-$deleted]($deleted_style)\] )](bg:base)]($style)'
+
+[nodejs]
+symbol = ""
+format = '[[ $symbol ($version) ](fg:green bg:mantle)]($style)'
+
+[rust]
+symbol = ""
+format = '[[ $symbol ($version) ](fg:maroon bg:mantle)]($style)'
+
+[golang]
+symbol = "󰟓"
+format = '[[ $symbol ($version) ](fg:sky bg:mantle)]($style)'
+
+[php]
+symbol = ""
+format = '[[ $symbol ($version) ](fg:blue bg:mantle)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+format = '[[  $time ](fg:overlay1 bg:crust)]($style)'
+
+[zig]
+symbol = ' '
+format = '[[ $symbol ($version) ](fg:yellow bg:mantle)]($style)'
+
+[palettes.catppuccin_macchiato]
+rosewater = "#f4dbd6"
+flamingo = "#f0c6c6"
+pink = "#f5bde6"
+mauve = "#c6a0f6"
+red = "#ed8796"
+maroon = "#ee99a0"
+peach = "#f5a97f"
+yellow = "#eed49f"
+green = "#a6da95"
+teal = "#8bd5ca"
+sky = "#91d7e3"
+sapphire = "#7dc4e4"
+blue = "#8aadf4"
+lavender = "#b7bdf8"
+text = "#cad3f5"
+subtext1 = "#b8c0e0"
+subtext0 = "#a5adcb"
+overlay2 = "#939ab7"
+overlay1 = "#8087a2"
+overlay0 = "#6e738d"
+surface2 = "#5b6078"
+surface1 = "#494d64"
+surface0 = "#363a4f"
+base = "#24273a"
+mantle = "#1e2030"
+crust = "#181926"
