@@ -75,7 +75,7 @@ added_style = 'bold blue bg:base'
 deleted_style = 'bold red bg:base'
 style = "bg:base"
 only_nonzero_diffs = false
-format = '[[(\[[+$added]($added_style) |) ([-$deleted]($deleted_style)\] )](bg:base)]($style)'
+format = '[[(\[[+$added]($added_style)) | ([-$deleted]($deleted_style)\] )](bg:base)]($style)'
 
 [nodejs]
 symbol = ""
